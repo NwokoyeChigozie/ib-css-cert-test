@@ -1,0 +1,96 @@
+@use "../settings/elements"as *;
+@use "../settings/mixins"as *;
+@use "../settings/variables"as *;
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("/assets/images/hero-bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 46rem;
+}
+
+
+.hero--container {
+    max-width: 614px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin: auto;
+    height: inherit;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    @include media($mobile) {
+        margin: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+}
+
+.hero__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: $white;
+    line-height: 49px;
+
+    @include media($mobile) {
+        font-size: 1.75rem;
+        line-height: 39px;
+    }
+}
+
+.hero__seperator {
+    width: 6.25rem;
+    height: 1px;
+    background-color: $white;
+    margin: 0 auto;
+}
+
+.hero__text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: $white-100;
+    line-height: 20px;
+
+    font-style: normal;
+    font-variation-settings: "wdth"87.5;
+
+    @include media($mobile) {
+        font-size: 0.85rem;
+        line-height: 20px;
+    }
+}
+
+.hero_button {
+    padding: 0.75rem 5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: $white;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    border: 1px solid $primary;
+    line-height: 25px;
+    font-style: normal;
+    font-variation-settings: "wdth"75;
+
+    &:hover {
+        opacity: 0.5;
+    }
+
+    @include media($mobile) {
+        font-size: 0.85rem;
+
+        padding: 0.75rem 3rem;
+    }
+}

@@ -1,0 +1,133 @@
+@use "../settings/elements"as *;
+@use "../settings/mixins"as *;
+@use "../settings/variables"as *;
+
+
+.footer__top {
+    background-color: #212529;
+    color: $white;
+}
+
+.footer__top--container {
+    @extend .container;
+
+    display: flex;
+    gap: 7rem;
+    align-items: start;
+    padding: 2rem;
+    min-height: 25rem;
+
+    div {
+        margin-top: 5rem;
+    }
+
+
+    @include media($mobile) {
+        flex-direction: column;
+        gap: 2rem;
+        // justify-content: center;
+        align-items: center;
+
+        div {
+            margin-top: 0;
+
+        }
+    }
+
+
+}
+
+.footer__TopTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $white;
+    line-height: 25px;
+    margin-bottom: 0.5rem;
+}
+
+.footer__TopText {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: $white-100;
+    line-height: 24px;
+    font-variation-settings: "wdth"90;
+    max-width: 7.25rem;
+
+    @include media($mobile) {
+        text-align: center;
+    }
+}
+
+.footer__TopText--link {
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.footer__publisher,
+.footer__explore,
+.footer_address {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    @include media($mobile) {
+        align-items: center;
+    }
+}
+
+.footer_navList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    @include media($mobile) {
+        align-items: center;
+    }
+}
+
+
+.footer__bottom {
+    background-color: #343A40;
+    color: $white-100;
+}
+
+.footer__bottom--container {
+    @extend .container;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    min-height: 5rem;
+
+    @include media($mobile) {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.footer__bottomText {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: $white-100;
+    line-height: 19px;
+    font-variation-settings: "wdth"90;
+}
+
+.footer__bottomSubscribe {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: $white-100;
+    line-height: 19px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}

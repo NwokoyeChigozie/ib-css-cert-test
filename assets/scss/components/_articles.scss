@@ -1,0 +1,141 @@
+@use "../settings/elements"as *;
+@use "../settings/mixins"as *;
+@use "../settings/variables"as *;
+
+.articles--container {
+    @extend .container;
+
+    margin: 3rem auto;
+}
+
+.articles__title,
+.articles__description {
+    text-align: center;
+}
+
+.articles__title {
+    font-size: 1.75rem;
+    color: $black;
+    line-height: 38px;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.articles__description {
+    font-size: 0.85rem;
+    color: $black-100;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.articles__nav {
+    margin: 3rem auto 1.75rem auto;
+}
+
+.articles__navList {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+
+    @include media($mobile) {
+        justify-content: space-between;
+    }
+}
+
+.articles__navListTab {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: $black-100;
+    line-height: 25px;
+    font-family: $sansopen;
+    cursor: pointer;
+    color: $black-100;
+    transition: opacity 0.3s;
+    font-variation-settings: "wdth"75;
+
+    &:hover {
+        opacity: 0.6;
+    }
+
+    @include media($mobile) {
+        font-size: 0.7rem;
+    }
+}
+
+.articles__navListTab--Active {
+    @extend .articles__navListTab;
+    color: $primary;
+}
+
+.articles__contents {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+
+    @include media($mobile) {
+        grid-template-columns: 1fr;
+        padding: 0 2rem;
+    }
+
+    a {
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+            transform: translateY(-0.25rem);
+        }
+    }
+
+}
+
+.articles__contentsItem {
+    background-color: #EFEFEF;
+    height: 32rem;
+    // padding-bottom: 1rem;
+
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 1rem 1rem 1rem;
+    }
+}
+
+.articles__contentsItemImage {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
+
+.articles__contentsItemDate,
+.articles__contentsItemTitle,
+.articles__contentsItemText {
+    width: 100%;
+}
+
+.articles__contentsItemDate {
+    font-size: 0.75rem;
+    color: $black-100;
+    line-height: 16px;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
+.articles__contentsItemTitle {
+    font-size: 1.125rem;
+    color: $black;
+    line-height: 25px;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.articles__contentsItemText {
+    font-size: 0.75rem;
+    color: $black-100;
+    line-height: 20px;
+    font-weight: 400;
+    margin-top: 1rem;
+}

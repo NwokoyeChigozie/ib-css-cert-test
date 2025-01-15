@@ -1,0 +1,66 @@
+@use "../settings/elements"as *;
+@use "../settings/mixins"as *;
+@use "../settings/variables"as *;
+
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.header--container {
+    @extend .container;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 5rem;
+    width: 100%;
+
+    @include media($mobile) {
+        height: 3rem;
+    }
+}
+
+.header__logo {
+    color: $primary;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    span {
+        color: $white;
+    }
+}
+
+.nav__list {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.nav__listItem {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: $white-100;
+    line-height: 19px;
+    font-family: $sansopen;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    font-style: normal;
+    font-variation-settings: "wdth"75;
+
+    a {
+        color: $white-100;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
